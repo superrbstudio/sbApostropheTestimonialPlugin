@@ -1,0 +1,41 @@
+sbTestimonial:
+  Testimonial1:
+    author_id: 1
+    active: true
+    name: John Coultrain
+    job_title: CEO
+    company_name: MegaAwesome Corp.
+    person_type: employer
+    testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique ultricies venenatis. Integer vel ante lacus. Maecenas fringilla, augue eu mattis auctor, purus justo ullamcorper nisi, at fringilla tortor metus quis ligula. Morbi tristique lorem et dui dignissim id fringilla dolor ultrices. Cras porta adipiscing vulputate. Donec dolor libero, congue sit amet posuere a, suscipit vel felis. Curabitur nec neque dolor, id ullamcorper turpis."
+  Testimonial2:
+    author_id: 1
+    active: true
+    name: Rupert Murdoch
+    job_title: Big Cheese
+    company_name: News Corp.
+    person_type: candidate
+    testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique ultricies venenatis. Integer vel ante lacus. Maecenas fringilla, augue eu mattis auctor, purus justo ullamcorper nisi, at fringilla tortor metus quis ligula. Morbi tristique lorem et dui dignissim id fringilla dolor ultrices. Cras porta adipiscing vulputate. Donec dolor libero, congue sit amet posuere a, suscipit vel felis. Curabitur nec neque dolor, id ullamcorper turpis."
+  Testimonial3:
+    author_id: 1
+    active: true
+    name: Bill Gates
+    job_title: Board Chairman
+    company_name: Microsoft
+    person_type: employer
+    testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique ultricies venenatis. Integer vel ante lacus. Maecenas fringilla, augue eu mattis auctor, purus justo ullamcorper nisi, at fringilla tortor metus quis ligula. Morbi tristique lorem et dui dignissim id fringilla dolor ultrices. Cras porta adipiscing vulputate. Donec dolor libero, congue sit amet posuere a, suscipit vel felis. Curabitur nec neque dolor, id ullamcorper turpis."
+  Testimonial4:
+    author_id: 1
+    active: true
+    name: Steve Jobs
+    job_title: CEO
+    company_name: Apple.
+    person_type: candidate
+    testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique ultricies venenatis. Integer vel ante lacus. Maecenas fringilla, augue eu mattis auctor, purus justo ullamcorper nisi, at fringilla tortor metus quis ligula. Morbi tristique lorem et dui dignissim id fringilla dolor ultrices. Cras porta adipiscing vulputate. Donec dolor libero, congue sit amet posuere a, suscipit vel felis. Curabitur nec neque dolor, id ullamcorper turpis."
+  Testimonial5:
+    author_id: 1
+    active: true
+    name: Tony Blair
+    job_title: Owner
+    company_name: Tony Blair is Great Plc.
+    person_type: employer
+    testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique ultricies venenatis. Integer vel ante lacus. Maecenas fringilla, augue eu mattis auctor, purus justo ullamcorper nisi, at fringilla tortor metus quis ligula. Morbi tristique lorem et dui dignissim id fringilla dolor ultrices. Cras porta adipiscing vulputate. Donec dolor libero, congue sit amet posuere a, suscipit vel felis. Curabitur nec neque dolor, id ullamcorper turpis."
