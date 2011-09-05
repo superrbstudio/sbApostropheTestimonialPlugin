@@ -1,0 +1,43 @@
+options:
+  type: INNODB
+  
+sbTestimonial:
+  actAs:
+    Timestampable: ~
+    Taggable: ~
+    Sluggable:
+      unique: true
+      fields: [ name, job_title, company_name ]
+      canUpdate: false
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+    author_id:
+      type: integer
+    active:
+      type: boolean
+      default: false
+      notnull: true
+    name:
+      type: string(255)
+    job_title:
+      type: string(255)
+    company_name:
+      type: string(255)
+    testimonial:
+      type: string(1000)
+    person_type:
+      type: string(100)
+  relations:
+    Author:
+      class: sfGuardUser
+      foreignAlias: TestimonialAuthor
+      local: author_id
+      foreign: id
+      onDelete: SET NULL
+  indexes:
+    active: { fields: active }
+    author: { fields: author_id }
+    person_type: { fields: person_type }
