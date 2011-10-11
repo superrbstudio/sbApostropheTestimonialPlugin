@@ -39,3 +39,13 @@ sbTestimonial:
     company_name: Tony Blair is Great Plc.
     person_type: employer
     testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tristique ultricies venenatis. Integer vel ante lacus. Maecenas fringilla, augue eu mattis auctor, purus justo ullamcorper nisi, at fringilla tortor metus quis ligula. Morbi tristique lorem et dui dignissim id fringilla dolor ultrices. Cras porta adipiscing vulputate. Donec dolor libero, congue sit amet posuere a, suscipit vel felis. Curabitur nec neque dolor, id ullamcorper turpis."
+    
+    
+sfGuardPermission:
+  sfGuardPermission_sb_testimonial_admin:
+    name: sb_testimonial_admin
+    description: 'Testimonial Administrator'
+sfGuardGroupPermission:  
+  sfGuardGroupPermission_admin_sb_testimonial_admin:
+    Group: sfGuardGroup_admin
+    Permission: sfGuardPermission_sb_testimonial_admin
