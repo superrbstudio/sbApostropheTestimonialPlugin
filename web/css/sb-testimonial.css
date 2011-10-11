@@ -1,0 +1,35 @@
+.a-admin-generator.sbTestimonialAdmin .a-subnav-wrapper.admin {
+	display: none;
+}
+
+.a-admin-generator.sbTestimonialAdmin .a-content, .a-admin-generator.sbTestimonialAdmin .a-admin-content {
+	width: 100%;
+}
+
+.a-admin-generator.sbTestimonialAdmin .a-admin-flashes {
+	background: transparent url('/apostrophePlugin/images/a-icon-error.png') no-repeat scroll left top;
+}
+
+.a-admin-generator.sbTestimonialAdmin .a-admin-filter-field br {
+	clear: left;
+}
+
+.alt.sb-testimonial-btn > .icon {
+	background-position: -20px -1400px;
+}
+
+.a-admin-generator.sbTestimonialAdmin h2.a-admin-title {
+	padding-bottom: 20px;
+}
+
+.a-admin-generator.sbTestimonialAdmin input.large-input {
+	width: 400px;
+}
+
+.a-admin-generator.sbTestimonialAdmin input.medium-input {
+	width: 300px;
+}
+
+.a-admin-generator.sbTestimonialAdmin input.small-input {
+	width: 150px;
+}
