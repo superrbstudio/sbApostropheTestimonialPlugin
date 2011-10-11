@@ -1,0 +1,42 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           sbTestimonial
+    theme:                 aAdmin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          sb_testimonial_admin
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+#      fields:  
+#        reference: { label: 'Job Reference ID' }
+#        title:     { label: 'Position Title' }
+#        type:      { label: 'Contract Type' }
+#        tags:      { label: 'Keywords (Tags)' }
+#        categories_list: { label: 'Industries (Categories)' }
+#        
+      list:    
+        title:    "Testimonials Admin"
+        display:  [ name, job_title, company_name, active, updated_at ]
+        sort:     [ updated_at, desc]
+      filter:
+        fields:   [ name, job_title, company_name, person_type, active ]
+        display:  [ name, job_title, company_name, person_type, active ]
+      form:    ~
+      edit:
+        title:    "Edit %%title%%"
+        display:
+          Testimonial Status: [ active ]
+          Testimonial Details: [ name, job_title, company_name, person_type ]
+          Testimonial: [ testimonial ]
+      new:
+        title:    "Add a new Testimonial"
+        display:
+          Testimonial Status: [ active ]
+          Testimonial Details: [ name, job_title, company_name, person_type ]
+          Testimonial Quote: [ testimonial ]
