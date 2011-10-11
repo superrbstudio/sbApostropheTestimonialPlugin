@@ -13,13 +13,8 @@ generator:
 
     config:
       actions: ~
-#      fields:  
-#        reference: { label: 'Job Reference ID' }
-#        title:     { label: 'Position Title' }
-#        type:      { label: 'Contract Type' }
-#        tags:      { label: 'Keywords (Tags)' }
-#        categories_list: { label: 'Industries (Categories)' }
-#        
+      fields:  
+        slug: { label: 'URL segment' }
       list:    
         title:    "Testimonials Admin"
         display:  [ name, job_title, company_name, active, updated_at ]
@@ -31,7 +26,7 @@ generator:
       edit:
         title:    "Edit %%title%%"
         display:
-          Testimonial Status: [ active ]
+          Testimonial Status: [ active, slug ]
           Testimonial Details: [ name, job_title, company_name, person_type ]
           Testimonial: [ testimonial ]
       new:

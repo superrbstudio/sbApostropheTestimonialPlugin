@@ -6,3 +6,15 @@ sb_testimonial_admin:
     prefix_path:          /admin/sb-testimonial
     column:               id
     with_wildcard_routes: true
+    
+sb_testimonial_autocomplete_job_titles:
+  url: /testimonial-autocomplete/job-titles
+  param: { module: sbTestimonialAjax, action: ajaxJobTitles }
+  
+sb_testimonial_autocomplete_company_names:
+  url: /testimonial-autocomplete/company-names
+  param: { module: sbTestimonialAjax, action: ajaxCompanyNames }
+  
+sb_testimonial_autocomplete_person_types:
+  url: /testimonial-autocomplete/person_types
+  param: { module: sbTestimonialAjax, action: ajaxPersonTypes }

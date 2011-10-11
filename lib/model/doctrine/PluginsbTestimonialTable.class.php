@@ -44,4 +44,49 @@ class PluginsbTestimonialTable extends Doctrine_Table
 		return $root->execute(array(), $fast ? Doctrine::HYDRATE_ARRAY : Doctrine::HYDRATE_RECORD);
 
 	}
+
+	public static function getJobTitles()
+	{
+		$returns = array();
+
+		$root = Doctrine_Query::create()
+						->select('job_title')
+						->from('sbTestimonial')
+						->groupBy('job_title')
+						->orderBy('job_title');
+
+		$items = $root->execute(array(), Doctrine::HYDRATE_ARRAY);
+		foreach($items as $item){ $returns[$item['job_title']] = $item['job_title']; }
+		return $returns;
+	}
+
+	public static function getCompanyNames()
+	{
+		$returns = array();
+
+		$root = Doctrine_Query::create()
+						->select('company_name')
+						->from('sbTestimonial')
+						->groupBy('company_name')
+						->orderBy('company_name');
+
+		$items = $root->execute(array(), Doctrine::HYDRATE_ARRAY);
+		foreach($items as $item){ $returns[$item['company_name']] = $item['company_name']; }
+		return $returns;
+	}
+
+	public static function getPersonTypes()
+	{
+		$returns = array();
+
+		$root = Doctrine_Query::create()
+						->select('person_type')
+						->from('sbTestimonial')
+						->groupBy('person_type')
+						->orderBy('person_type');
+
+		$items = $root->execute(array(), Doctrine::HYDRATE_ARRAY);
+		foreach($items as $item){ $returns[$item['person_type']] = $item['person_type']; }
+		return $returns;
+	}
 }

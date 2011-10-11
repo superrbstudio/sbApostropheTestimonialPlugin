@@ -8,7 +8,7 @@ sbTestimonial:
     Sluggable:
       unique: true
       fields: [ name, job_title, company_name ]
-      canUpdate: false
+      canUpdate: true
   columns:
     id:
       type: integer

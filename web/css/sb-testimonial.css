@@ -15,7 +15,7 @@
 }
 
 .alt.sb-testimonial-btn > .icon {
-	background-position: -20px -1400px;
+	background-position: -20px -1300px;
 }
 
 .a-admin-generator.sbTestimonialAdmin h2.a-admin-title {
@@ -24,6 +24,11 @@
 
 .a-admin-generator.sbTestimonialAdmin input.large-input {
 	width: 400px;
+}
+
+.a-admin-generator.sbTestimonialAdmin textarea.large-input {
+	width: 400px;
+	height: 150px;
 }
 
 .a-admin-generator.sbTestimonialAdmin input.medium-input {
