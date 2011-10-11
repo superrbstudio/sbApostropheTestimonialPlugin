@@ -1,0 +1,8 @@
+sb_testimonial_admin:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sbTestimonial
+    module:               sbTestimonialAdmin
+    prefix_path:          /admin/sb-testimonial
+    column:               id
+    with_wildcard_routes: true
