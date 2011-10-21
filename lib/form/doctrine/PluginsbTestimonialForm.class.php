@@ -18,8 +18,11 @@ abstract class PluginsbTestimonialForm extends BasesbTestimonialForm
 
 		$this->setWidget('author_id', new sfWidgetFormInputHidden(array(), array('value' => sfContext::getInstance()->getUser()->getGuardUser()->getId())));
 
-		$this->setWidget('slug', new sfWidgetFormInputText(array(), array('class' => 'medium-input')));
-		$this->setValidator('slug', new sfValidatorString(array('required' => true), array()));
+		if(!$this->isNew())
+		{
+			$this->setWidget('slug', new sfWidgetFormInputText(array(), array('class' => 'medium-input')));
+			$this->setValidator('slug', new sfValidatorString(array('required' => true), array()));
+		}
 
 		$this->setWidget('name', new sfWidgetFormInputText(array(), array('class' => 'large-input')));
 		$this->setValidator('name', new sfValidatorString(array('required' => true), array()));
