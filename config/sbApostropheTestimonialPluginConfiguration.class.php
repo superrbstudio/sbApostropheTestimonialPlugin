@@ -32,7 +32,7 @@ class sbApostropheTestimonialPluginConfiguration extends sfPluginConfiguration
   {
     $user = sfContext::getInstance()->getUser();
 
-    if ($user->hasCredential('sb_job_board_admin'))
+    if ($user->hasCredential('admin'))
     {
       aTools::addGlobalButtons(array(
         new aGlobalButton('sb-testimonial', 'Testimonials', '@sb_testimonial_admin', 'sb-testimonial-btn')
