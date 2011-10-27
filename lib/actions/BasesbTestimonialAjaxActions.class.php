@@ -15,7 +15,7 @@ abstract class BasesbTestimonialAjaxActions extends BaseaActions
 		$this->forward404Unless($this->getUser()->isAuthenticated());
 		$this->getResponse()->setHttpHeader('Content-Type','application/json; charset=utf-8');
 		$keylessTitles = array();
-		$titles = sbTestimonialTable::getJobTitles();
+		$titles = sbTestimonialTable::getJobTitles($request->getParameter('term'));
 		foreach($titles as $title){$keylessTitles[] = $title;}
 		$this->getResponse()->setContent(json_encode($keylessTitles));
 		return sfView::NONE;
@@ -26,7 +26,7 @@ abstract class BasesbTestimonialAjaxActions extends BaseaActions
 		$this->forward404Unless($this->getUser()->isAuthenticated());
 		$this->getResponse()->setHttpHeader('Content-Type','application/json; charset=utf-8');
 		$keylessTitles = array();
-		$titles = sbTestimonialTable::getCompanyNames();
+		$titles = sbTestimonialTable::getCompanyNames($request->getParameter('term'));
 		foreach($titles as $title){$keylessTitles[] = $title;}
 		$this->getResponse()->setContent(json_encode($keylessTitles));
 		return sfView::NONE;
@@ -37,7 +37,7 @@ abstract class BasesbTestimonialAjaxActions extends BaseaActions
 		$this->forward404Unless($this->getUser()->isAuthenticated());
 		$this->getResponse()->setHttpHeader('Content-Type','application/json; charset=utf-8');
 		$keylessTitles = array();
-		$titles = sbTestimonialTable::getPersonTypes();
+		$titles = sbTestimonialTable::getPersonTypes($request->getParameter('term'));
 		foreach($titles as $title){$keylessTitles[] = $title;}
 		$this->getResponse()->setContent(json_encode($keylessTitles));
 		return sfView::NONE;

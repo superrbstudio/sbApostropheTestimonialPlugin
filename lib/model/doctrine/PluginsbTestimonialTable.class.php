@@ -45,45 +45,63 @@ class PluginsbTestimonialTable extends Doctrine_Table
 
 	}
 
-	public static function getJobTitles()
+	public static function getJobTitles($term = null)
 	{
 		$returns = array();
 
 		$root = Doctrine_Query::create()
 						->select('job_title')
-						->from('sbTestimonial')
-						->groupBy('job_title')
-						->orderBy('job_title');
+						->from('sbTestimonial');
+
+		if($term != null and $term != '' and strlen($term) > 1)
+		{
+			$root->where('job_title LIKE ?', $term . '%');
+		}
+
+		$root->groupBy('job_title');
+		$root->orderBy('job_title');
 
 		$items = $root->execute(array(), Doctrine::HYDRATE_ARRAY);
 		foreach($items as $item){ $returns[$item['job_title']] = $item['job_title']; }
 		return $returns;
 	}
 
-	public static function getCompanyNames()
+	public static function getCompanyNames($term = null)
 	{
 		$returns = array();
 
 		$root = Doctrine_Query::create()
 						->select('company_name')
-						->from('sbTestimonial')
-						->groupBy('company_name')
-						->orderBy('company_name');
+						->from('sbTestimonial');
+
+		if($term != null and $term != '' and strlen($term) > 1)
+		{
+			$root->where('company_name LIKE ?', $term . '%');
+		}
+
+		$root->groupBy('company_name');
+		$root->orderBy('company_name');
 
 		$items = $root->execute(array(), Doctrine::HYDRATE_ARRAY);
 		foreach($items as $item){ $returns[$item['company_name']] = $item['company_name']; }
 		return $returns;
 	}
 
-	public static function getPersonTypes()
+	public static function getPersonTypes($term = null)
 	{
 		$returns = array();
 
 		$root = Doctrine_Query::create()
 						->select('person_type')
-						->from('sbTestimonial')
-						->groupBy('person_type')
-						->orderBy('person_type');
+						->from('sbTestimonial');
+
+		if($term != null and $term != '' and strlen($term) > 1)
+		{
+			$root->where('person_type LIKE ?', $term . '%');
+		}
+
+		$root->groupBy('person_type');
+		$root->orderBy('person_type');
 
 		$items = $root->execute(array(), Doctrine::HYDRATE_ARRAY);
 		foreach($items as $item){ $returns[$item['person_type']] = $item['person_type']; }
