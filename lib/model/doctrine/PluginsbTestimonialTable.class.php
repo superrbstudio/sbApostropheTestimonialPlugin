@@ -17,6 +17,28 @@ class PluginsbTestimonialTable extends Doctrine_Table
 		return Doctrine_Core::getTable('sbTestimonial');
 	}
 
+	public static function getTestimonials($options)
+	{
+		$fast = sfConfig::get('app_a_fasthydrate', false);
+		$root = Doctrine_Query::create()
+						->select('t.id, t.active, t.name, t.job_title, t.company_name, t.testimonial,
+										 t.person_type, t.created_at, t.updated_at, t.slug, RANDOM() AS rand')
+						->from('sbTestimonial t')
+						->where(1);
+
+		if(isset($options['order']))
+		{
+			$root->orderBy($options['order']);
+		}
+
+		if(is_numeric($options['limit']))
+		{
+			$root->limit($options['limit']);
+		}
+
+		return $root->execute(array(), $fast ? Doctrine::HYDRATE_ARRAY : Doctrine::HYDRATE_RECORD);
+	}
+
 	public static function getRandomTestimonials($limit = 5, $active = true)
 	{
 		$fast = sfConfig::get('app_a_fasthydrate', false);

@@ -23,4 +23,19 @@ abstract class BasesbTestimonialComponents extends sfComponents
 
 		$this->testimonials = sbTestimonialTable::getRandomTestimonials($this->numTestimonials);
 	}
+
+	public function executeTestimonials()
+	{
+		if(!is_numeric($this->numTestimonials))
+		{
+			$this->numTestimonials = 5;
+		}
+
+		if($this->orderTestimonials == '')
+		{
+			$this->orderTestimonials = 'updated_at';
+		}
+
+		$this->testimonials = sbTestimonialTable::getTestimonials(array('order' => $this->orderTestimonials, 'limit' => $this->numTestimonials));
+	}
 }
