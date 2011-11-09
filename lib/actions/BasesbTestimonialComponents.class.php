@@ -18,12 +18,12 @@ abstract class BasesbTestimonialComponents extends sfComponents
 	{
 		if(!is_numeric($this->numTestimonials))
 		{
-			$this->numTestimonials = 5;
+			$this->numTestimonials = null;
 		}
 
-		if(!is_bool($this->activeTestimonials) and $this->activeTestimonials != null)
+		if(!is_bool($this->activeTestimonials))
 		{
-			$this->activeTestimonials = true;
+			$this->activeTestimonials = null;
 		}
 
 		$this->testimonials = sbTestimonialTable::getRandomTestimonials($this->numTestimonials, $this->activeTestimonials);
@@ -33,17 +33,17 @@ abstract class BasesbTestimonialComponents extends sfComponents
 	{
 		if(!is_numeric($this->numTestimonials))
 		{
-			$this->numTestimonials = 5;
+			$this->numTestimonials = null;
 		}
 
-		if($this->orderTestimonials == '')
+		if($this->orderTestimonials == '' or is_null($this->orderTestimonials))
 		{
 			$this->orderTestimonials = 'updated_at';
 		}
 
-		if(!is_bool($this->activeTestimonials) and $this->activeTestimonials != null)
+		if(!is_bool($this->activeTestimonials))
 		{
-			$this->activeTestimonials = true;
+			$this->activeTestimonials = null;
 		}
 
 		$this->testimonials = sbTestimonialTable::getTestimonials(array('order' => $this->orderTestimonials,
