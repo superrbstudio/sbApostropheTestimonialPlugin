@@ -17,7 +17,7 @@ class PluginsbTestimonialTable extends Doctrine_Table
 		return Doctrine_Core::getTable('sbTestimonial');
 	}
 
-	public static function getTestimonials($options)
+	public static function getTestimonials($options = array())
 	{
 		$fast = sfConfig::get('app_a_fasthydrate', false);
 		$root = Doctrine_Query::create()
@@ -25,6 +25,11 @@ class PluginsbTestimonialTable extends Doctrine_Table
 										 t.person_type, t.created_at, t.updated_at, t.slug, RANDOM() AS rand')
 						->from('sbTestimonial t')
 						->where(1);
+
+		if(isset($options['active']))
+		{
+			$root->andWhere('t.active = ?', $active);
+		}
 
 		if(isset($options['order']))
 		{
@@ -35,6 +40,34 @@ class PluginsbTestimonialTable extends Doctrine_Table
 		{
 			$root->limit($options['limit']);
 		}
+
+		return $root->execute(array(), $fast ? Doctrine::HYDRATE_ARRAY : Doctrine::HYDRATE_RECORD);
+	}
+
+	public static function getTestimonialTypes($options = array())
+	{
+		$fast = sfConfig::get('app_a_fasthydrate', false);
+		$root = Doctrine_Query::create()
+						->select('t.person_type')
+						->from('sbTestimonial t')
+						->where(1);
+
+		if(isset($options['active']))
+		{
+			$root->andWhere('t.active = ?', $active);
+		}
+
+		if(isset($options['order']))
+		{
+			$root->orderBy($options['order']);
+		}
+
+		if(is_numeric($options['limit']))
+		{
+			$root->limit($options['limit']);
+		}
+
+		$root->groupBy('t.person_type');
 
 		return $root->execute(array(), $fast ? Doctrine::HYDRATE_ARRAY : Doctrine::HYDRATE_RECORD);
 	}
