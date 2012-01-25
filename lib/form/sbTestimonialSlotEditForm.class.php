@@ -9,12 +9,10 @@ class sbTestimonialSlotEditForm extends BaseForm
     parent::__construct($defaults, $options, $CSRFSecret);
   }
   public function configure()
-  {
-    // ADD YOUR FIELDS HERE
-    
+  { 
     // A simple example: a slot with a single 'text' field with a maximum length of 100 characters
-    $this->setWidgets(array('text' => new sfWidgetFormTextarea()));
-    $this->setValidators(array('text' => new sfValidatorString(array('required' => false, 'max_length' => 100))));
+    $this->setWidgets(array('testimonial_id' => new sfWidgetFormDoctrineChoice(array('model' => 'sbTestimonial', 'method' => 'getTitle',))));
+    $this->setValidators(array('testimonial_id' => new sfValidatorDoctrineChoice(array('model' => 'sbTestimonial'))));
     
     // Ensures unique IDs throughout the page. Hyphen between slot and form to please our CSS
     $this->widgetSchema->setNameFormat('slot-form-' . $this->id . '[%s]');

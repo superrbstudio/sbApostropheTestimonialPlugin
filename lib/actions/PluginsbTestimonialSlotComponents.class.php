@@ -23,5 +23,16 @@ abstract class PluginsbTestimonialSlotComponents extends aSlotComponents
   {
     $this->setup();
     $this->values = $this->slot->getArrayValue();
+		$this->testimonial = null;
+		
+		if(isset($this->values['testimonial_id']))
+		{
+			$this->testimonial = Doctrine_Core::getTable('sbTestimonial')->findOneById($this->values['testimonial_id']);
+			
+			if(!($this->testimonial instanceof sbTestimonial))
+			{
+				$this->testimonial = null;
+			}
+		}
   }
 }
