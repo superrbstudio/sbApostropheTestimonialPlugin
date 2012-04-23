@@ -18,8 +18,8 @@ class sbTestimonialsSlotComponents extends aSlotComponents
     $this->setup();
     $this->values = $this->slot->getArrayValue();
     
-    if(!isset($this->values['number'])) { $this->values['number'] == 3; }
-    if(!isset($this->values['order_by'])) { $this->values['order_by'] == 'updated_at'; }
+    if(!isset($this->values['number'])) { $this->values['number'] = 3; }
+    if(!isset($this->values['order_by'])) { $this->values['order_by'] = 'updated_at'; }
     
     $reverseOrder = array('updated_at', 'created_at');
     
