@@ -5,12 +5,5 @@
 <?php endif; ?>
 
 <?php if (!is_null($testimonial)): ?>
-<blockquote class="sb-testimonial">
-	<p class="sb-testimonial-quote">"<?php echo $testimonial->getTestimonial(); ?>"</p>
-	<cite>
-		<span class="sb-testimonial-name"><?php echo $testimonial->getName(); ?></span>
-		<span class="sb-testimonial-title"><?php echo $testimonial->getJobTitle(); ?></span>
-		<span class="sb-testimonial-company"><?php echo $testimonial->getCompanyName(); ?></span>
-	</cite>
-</blockquote>
+<?php include_partial('sbTestimonialSlot/testimonial', array('testimonial' => $testimonial)); ?>
 <?php endif ?>

@@ -28,7 +28,7 @@ class PluginsbTestimonialTable extends Doctrine_Table
 
 		if(isset($options['active']))
 		{
-			$root->andWhere('t.active = ?', $active);
+			$root->andWhere('t.active = ?', $options['active']);
 		}
 
 		if(isset($options['order']))
