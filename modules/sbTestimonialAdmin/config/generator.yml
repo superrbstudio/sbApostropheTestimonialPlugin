@@ -24,7 +24,7 @@ generator:
         display:  [ name, job_title, company_name, person_type, active ]
       form:    ~
       edit:
-        title:    "Edit %%title%%"
+        title:    "Edit %%name%%"
         display:
           Testimonial Status: [ active, slug ]
           Testimonial Details: [ name, job_title, company_name, person_type ]
